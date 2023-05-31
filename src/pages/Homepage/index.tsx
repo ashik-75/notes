@@ -1,14 +1,18 @@
-import Cards from "./Cards";
-import Maps from "./Maps";
-import Filter from "./filters";
+import Design from "../../components/Design";
+import Hero from "./Hero";
+import Highlight from "./Highlight";
+import Titans from "./Titans";
 
 function Homepage() {
   return (
-    <div>
-      <Filter />
-      <div className="grid grid-cols-2 gap-5">
-        <Cards />
-        <Maps />
+    <div className="min-h-screen">
+      <Hero />
+      <div className="bg-black">
+        <div className="mx-auto max-w-7xl py-20">
+          <Highlight />
+          <Design />
+          <Titans />
+        </div>
       </div>
     </div>
   );

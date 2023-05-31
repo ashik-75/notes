@@ -4,9 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "dm-mono": `"DM Sans", sans-serif`,
-        montesserat: `"Montserrat", sans-serif`,
-        poppins: `"Poppins", sans-serif;`,
+        aleg: `'DM Serif Display', serif`,
+        roboto: `'Roboto', sans-serif`,
       },
     },
   },

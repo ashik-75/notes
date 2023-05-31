@@ -1,16 +1,14 @@
 import { Outlet } from "react-router-dom";
-import Footer from "./Footer";
-import Header from "./Header";
+import Header from "../components/Header";
 
 function RootLayout() {
   return (
     <div>
       <Header />
-      <main className="mx-auto min-h-[calc(100vh-128px)] max-w-7xl p-5">
+
+      <main>
         <Outlet />
       </main>
-
-      <Footer />
     </div>
   );
 }
