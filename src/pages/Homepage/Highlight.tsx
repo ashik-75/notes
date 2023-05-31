@@ -47,7 +47,7 @@ function Card() {
     <div className="flex gap-5 rounded border border-zinc-800 bg-zinc-500/20 px-5 py-3 backdrop-blur-lg">
       <div className="h-7 w-7 overflow-hidden rounded-full">
         <img
-          src="https://source.unsplash.com/3TLl_97HNJo/100x100/"
+          src="https://source.unsplash.com/3TLl_97HNJo/50x50/"
           alt=""
           className="object-cover"
         />
@@ -106,21 +106,21 @@ function SpecialCard() {
         <div className="flex space-x-2">
           <div className="h-7 w-7 overflow-hidden rounded-full">
             <img
-              src="https://source.unsplash.com/pAtA8xe_iVM/100x100/"
+              src="https://source.unsplash.com/pAtA8xe_iVM/50x50/"
               alt=""
               className="object-cover"
             />
           </div>
           <div className="h-7 w-7 overflow-hidden rounded-full">
             <img
-              src="https://source.unsplash.com/Zz5LQe-VSMY/100x100/"
+              src="https://source.unsplash.com/Zz5LQe-VSMY/50x50/"
               alt=""
               className="object-cover"
             />
           </div>
           <div className="h-7 w-7 overflow-hidden rounded-full">
             <img
-              src="https://source.unsplash.com/DItYlc26zVI/100x100/"
+              src="https://source.unsplash.com/DItYlc26zVI/50x50/"
               alt=""
               className="object-cover"
             />

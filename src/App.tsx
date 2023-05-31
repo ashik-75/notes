@@ -11,6 +11,7 @@ import {
 import RootLayout from "./layout/RootLayout";
 import About from "./pages/About";
 import Homepage from "./pages/Homepage";
+import Pricing from "./pages/Pricing";
 
 function App() {
   const router = createBrowserRouter(
@@ -18,6 +19,7 @@ function App() {
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Homepage />} />
         <Route path="about" element={<About />} />
+        <Route path="pricing" element={<Pricing />} />
       </Route>
     )
   );
