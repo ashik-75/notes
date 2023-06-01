@@ -8,7 +8,7 @@ function Homepage() {
     <div className="min-h-screen">
       <Hero />
       <div className="bg-black">
-        <div className="mx-auto max-w-7xl py-20">
+        <div className="mx-auto max-w-7xl px-5 py-20">
           <Highlight />
           <Design />
           <Titans />

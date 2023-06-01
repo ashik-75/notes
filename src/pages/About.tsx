@@ -158,7 +158,7 @@ const item = {
 };
 function About() {
   return (
-    <div className="min-h-screen bg-black bg-[url('/clay-5.jpg')] bg-[length:100%] bg-[position:top_right] bg-no-repeat py-32">
+    <div className="min-h-screen bg-black bg-[url('/clay-5.jpg')] bg-[length:100%] bg-[position:top_right] bg-no-repeat px-5 py-32">
       <div className="mx-auto mb-10 max-w-2xl space-y-5 font-aleg text-zinc-300">
         <h1 className="text-3xl font-medium">Investors</h1>
         <p className="font-serif text-lg">
@@ -175,28 +175,6 @@ function About() {
           variants={container}
           viewport={{ once: true }}
           className="mx-auto max-w-4xl columns-1 gap-5 gap-y-5  text-zinc-200 sm:columns-2 md:columns-3 [&>div:not(:first-child)]:mt-5"
-        >
-          {investors.map((inv) => (
-            <Card investor={inv} key={inv.designation} />
-          ))}
-        </motion.div>
-        <motion.div
-          initial="initial"
-          whileInView="show"
-          variants={container}
-          viewport={{ once: true }}
-          className="mx-auto max-w-4xl columns-1 gap-5 gap-y-5 text-zinc-200 sm:columns-2 md:columns-3 [&>div:not(:first-child)]:mt-5"
-        >
-          {investors.map((inv) => (
-            <Card investor={inv} key={inv.designation} />
-          ))}
-        </motion.div>
-        <motion.div
-          initial="initial"
-          whileInView="show"
-          variants={container}
-          viewport={{ once: true }}
-          className="mx-auto max-w-4xl columns-1 gap-5 gap-y-5 text-zinc-200 sm:columns-2 md:columns-3 [&>div:not(:first-child)]:mt-5"
         >
           {investors.map((inv) => (
             <Card investor={inv} key={inv.designation} />

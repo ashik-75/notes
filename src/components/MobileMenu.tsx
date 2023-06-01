@@ -79,7 +79,7 @@ function MobileMenu() {
                 </p>
                 <button
                   className="font-aleg text-2xl"
-                  onClick={() => handleRouting("/carrer")}
+                  onClick={() => handleRouting("/career")}
                 >
                   CAREER
                 </button>

@@ -82,7 +82,11 @@ function SpecialCard() {
   return (
     <div className="flex gap-5 rounded border border-zinc-800 bg-zinc-600/10 px-4 py-2 backdrop-blur-lg">
       <div className="h-7 w-7 shrink-0 overflow-hidden rounded-full">
-        <img src="/love.jpg" alt="" className="h-full w-full object-cover" />
+        <img
+          src="https://source.unsplash.com/pAtA8xe_iVM/50x50/"
+          alt=""
+          className="h-full w-full object-cover"
+        />
       </div>
 
       <div className="space-y-3">

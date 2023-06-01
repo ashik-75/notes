@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         aleg: `'DM Serif Display', serif`,
         roboto: `'Roboto', sans-serif`,
+        ibm: `'IBM Plex Serif', serif`,
       },
       keyframes: {
         buttonSpacing: {

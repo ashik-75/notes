@@ -1,22 +1,24 @@
 import { ArrowRight, Indent } from "lucide-react";
+import ReactPlayer from "react-player";
 
 function Hero() {
   return (
     <div>
-      <section className="relative h-screen w-full overflow-hidden pt-28">
+      <section className="relative min-h-screen w-full overflow-hidden px-5 pt-20 sm:pt-28">
+        <div className="absolute inset-0 -z-[11] bg-black"></div>
         <div className="absolute inset-0 -z-[2] bg-gradient-to-b from-black/40 to-black/90"></div>
         <video
           autoPlay
           loop
           muted
           src="/galaxy.mp4"
-          className="absolute left-0 top-0 -z-10"
+          className="absolute inset-0 -z-10 h-full w-full object-cover"
         ></video>
         <div className="mx-auto my-20 max-w-7xl space-y-12">
           <div className="flex justify-center">
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-rose-600 to-purple-600 blur transition group-hover:-inset-1"></div>
-              <button className="relative flex divide-x divide-zinc-500 rounded bg-zinc-900 px-4 py-2 text-zinc-50">
+              <button className="relative flex flex-col items-center divide-zinc-500 rounded bg-zinc-900 px-4 py-2 text-zinc-50 sm:flex-row sm:divide-x">
                 <div className="flex gap-5 pr-2">
                   <span>
                     <Indent className="h-5 w-5" />
@@ -31,7 +33,7 @@ function Hero() {
           </div>
 
           <div className=" space-y-10 text-center text-white">
-            <h1 className="font-aleg text-7xl">
+            <h1 className="font-aleg text-3xl sm:text-7xl">
               Unlock the full power of your relationships
             </h1>
             <p className="mx-auto max-w-xl text-center font-roboto  text-2xl ">
@@ -50,6 +52,16 @@ function Hero() {
                 </button>
               </div>
             </div>
+          </div>
+
+          <div className="apect-video min-h-40 relative mx-auto max-w-xl overflow-hidden rounded-2xl border border-zinc-700 ">
+            {/* <video src="/prev.mp4" autoPlay={true} onPlay={true}></video> */}
+            <ReactPlayer
+              url={"/prev.mp4"}
+              width={"100%"}
+              height={"100%"}
+              // controls
+            />
           </div>
         </div>
       </section>

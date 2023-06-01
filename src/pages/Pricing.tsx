@@ -143,7 +143,7 @@ const PriceTable = ({ price }: { price: PriceTableType }) => {
         <>
           {price.id !== 3 ? (
             <div className="py-8 text-center font-aleg text-3xl font-bold tracking-widest">
-              price.type
+              {price.type}
             </div>
           ) : (
             <div className="py-4 text-center">
