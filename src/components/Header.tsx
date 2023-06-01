@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import MobileMenu from "./MobileMenu";
+import SignIn from "./SignIn";
 
 function Header() {
   return (
@@ -25,9 +26,7 @@ function Header() {
         </ul>
 
         <div className="hidden gap-5 space-x-4 sm:flex">
-          <button className="rounded-full bg-zinc-800 px-3 py-1 text-xs uppercase tracking-wider text-zinc-300">
-            sign in
-          </button>
+          <SignIn />
           <div className="group relative">
             <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 blur transition group-hover:-inset-1"></div>
             <button className="relative rounded-full bg-white from-pink-600 to-yellow-500 px-3 py-1 text-xs font-semibold uppercase tracking-wider">

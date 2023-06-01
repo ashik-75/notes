@@ -1,7 +1,12 @@
-import { ArrowRight, Indent } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowRight, Indent, Play } from "lucide-react";
+import { useState } from "react";
 import ReactPlayer from "react-player";
 
 function Hero() {
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  console.log({ isPlaying });
   return (
     <div>
       <section className="relative min-h-screen w-full overflow-hidden px-5 pt-20 sm:pt-28">
@@ -54,14 +59,40 @@ function Hero() {
             </div>
           </div>
 
-          <div className="apect-video min-h-40 relative mx-auto max-w-xl overflow-hidden rounded-2xl border border-zinc-700 ">
-            {/* <video src="/prev.mp4" autoPlay={true} onPlay={true}></video> */}
-            <ReactPlayer
-              url={"/prev.mp4"}
-              width={"100%"}
-              height={"100%"}
-              // controls
-            />
+          {/* Video player */}
+
+          {/* container */}
+          <div
+            onClick={() => setIsPlaying((p) => !p)}
+            className="apect-video min-h-40 relative mx-auto  max-w-4xl cursor-pointer overflow-hidden rounded-2xl border border-zinc-700"
+          >
+            {/* video player */}
+
+            <div>
+              <ReactPlayer
+                url={"/prev.mp4"}
+                width={"100%"}
+                height={"100%"}
+                playing={isPlaying}
+                loop={isPlaying}
+              />
+            </div>
+
+            {/* controller */}
+            <AnimatePresence>
+              {!isPlaying && (
+                <motion.div
+                  animate={{ opacity: 1 }}
+                  initial={{ opacity: 0 }}
+                  exit={{ opacity: 0 }}
+                  className="absolute inset-0 flex items-center justify-center bg-zinc-800/40"
+                >
+                  <button className="flex items-center justify-center rounded-full border border-zinc-500 p-4 text-white  transition-all hover:scale-125 hover:animate-pulse">
+                    <Play className="h-10 w-10" />
+                  </button>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
       </section>
