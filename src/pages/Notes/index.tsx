@@ -315,7 +315,7 @@ function CategoryList({
           key={cat.id}
           onClick={() => handleSelectCategory(cat)}
           className={cn(
-            "group flex w-fit min-w-[100px] items-center justify-center rounded-full border border-zinc-700 px-3 py-1 capitalize",
+            "group flex w-fit min-w-[100px] cursor-pointer items-center justify-center rounded-full border border-zinc-700 px-3 py-1 capitalize",
             selectedCat.find((c) => c.name === cat.name) && "bg-zinc-700"
           )}
         >
