@@ -1,8 +1,9 @@
 import { motion as m } from "framer-motion";
-import { Trash, X } from "lucide-react";
+import { Trash, Trash2, X } from "lucide-react";
 import { FormEvent, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import Spinner from "../../components/Spinner";
+import { cn } from "../../utils/cn";
 import { sleep } from "../../utils/sleep";
 import SelectCategory from "./CategorySelector";
 
@@ -55,7 +56,7 @@ const Notes: React.FC = () => {
 
   return (
     <div className="mx-auto max-w-7xl px-5 sm:px-0">
-      <div className="grid min-h-[50vh] grid-cols-4 ">
+      <div className="grid min-h-[50vh] grid-cols-1 sm:grid-cols-4 ">
         <div className="p-5">
           <div>
             <CategoryForm setCategories={setCategories} />
@@ -84,8 +85,12 @@ const Notes: React.FC = () => {
 
           {/* show all the notes */}
 
-          <div>
-            <NoteList notes={filteredNotes} setNotes={setNotes} />
+          <div className="mt-5">
+            {filteredNotes.length > 0 ? (
+              <NoteList notes={filteredNotes} setNotes={setNotes} />
+            ) : (
+              <div>No Notes available here</div>
+            )}
           </div>
         </div>
       </div>
@@ -203,7 +208,7 @@ function NoteList({
   return (
     <m.div
       layout
-      className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 "
+      className=" grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 "
     >
       {notes?.map((note) => (
         <m.div
@@ -270,14 +275,14 @@ function CategoryForm({
             setFormData((prev) => ({ ...prev, name: e.target.value }))
           }
           placeholder="category name ..."
-          className=" h-full w-full rounded border border-zinc-800 bg-transparent  px-2 py-1.5 outline-none placeholder:text-sm placeholder:text-zinc-600"
+          className=" h-full w-full rounded border border-zinc-600 bg-transparent  px-3 py-2 outline-none placeholder:text-sm placeholder:text-zinc-600"
         />
       </div>
 
       <div>
         <m.button
           layout="position"
-          className="rounded border border-zinc-800 px-2 py-1.5 text-sm text-zinc-500"
+          className="rounded border border-zinc-600 px-3 py-2 text-sm text-zinc-500"
         >
           {loading ? <Spinner width={18} height={18} /> : "add"}
         </m.button>
@@ -304,23 +309,21 @@ function CategoryList({
   };
 
   return (
-    <m.div layout className="mt-5">
+    <m.div layout className="mt-5 flex flex-row flex-wrap gap-3 sm:flex-col">
       {categories?.map((cat) => (
-        <div className="mb-4 flex items-center">
-          <input
-            id={`${cat.id}`}
-            type="checkbox"
-            value={cat.name}
-            onChange={() => handleSelectCategory(cat)}
-            checked={Boolean(selectedCat.find((c) => c.name === cat.name))}
-            className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            htmlFor={`${cat.id}`}
-            className="ml-2 text-sm font-medium text-gray-200 dark:text-gray-300"
-          >
-            {cat.name}
-          </label>
+        <div
+          key={cat.id}
+          onClick={() => handleSelectCategory(cat)}
+          className={cn(
+            "group flex w-fit min-w-[100px] items-center justify-center rounded-full border border-zinc-700 px-3 py-1 capitalize",
+            selectedCat.find((c) => c.name === cat.name) && "bg-zinc-700"
+          )}
+        >
+          <span>{cat.name}</span>
+
+          <m.button className="hidden group-hover:visible">
+            <Trash2 className="h-5 w-5" />
+          </m.button>
         </div>
       ))}
     </m.div>

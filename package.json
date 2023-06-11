@@ -13,6 +13,7 @@
     "@heroicons/react": "^2.0.18",
     "@tanstack/react-query": "^4.29.5",
     "axios": "^1.4.0",
+    "clsx": "^1.2.1",
     "date-fns": "^2.30.0",
     "framer-motion": "^10.12.16",
     "google-map-react": "^2.2.0",
@@ -26,7 +27,8 @@
     "react-router-dom": "^6.10.0",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
-    "swiper": "^9.3.2"
+    "swiper": "^9.3.2",
+    "tailwind-merge": "^1.13.1"
   },
   "devDependencies": {
     "@types/google-map-react": "^2.1.7",
